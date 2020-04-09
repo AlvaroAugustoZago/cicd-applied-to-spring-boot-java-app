@@ -8,6 +8,12 @@ jdk:
 services:
 #Linking Travis CI and Docker
 - docker
+# SonarCloud
+addons:
+  sonarcloud:
+    organization: "cicd-applied-to-spring-boot-java-app"
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
 
 before_install:
   - chmod +x mvnw
@@ -15,11 +21,6 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login  -u "$DOCKER_USERNAME" --password-stdin
   - docker pull openjdk:8-jdk-alpine
 
-addons:
-  sonarcloud:
-    organization: "alvaroaugustozago"
-    token:
-      secure: "**************************" # encrypted value of your token
 
 script:
 #We avoid this error :" the job exceeded the maximum log length and has been terminated " 
