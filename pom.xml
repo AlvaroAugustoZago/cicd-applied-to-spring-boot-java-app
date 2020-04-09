@@ -115,6 +115,7 @@
 							</artifactItems>
 						</configuration>
 					</execution>
+					
 
 
 				</executions>
@@ -179,7 +180,7 @@
 				<configuration>
 					<appName>ci-cd-spring-boot-java-app</appName>
 					<processTypes>
-						<web>java $JAVA_OPTS -jar -Dserver.port=$PORT
+						<web>java -jar -Dserver.port=$PORT
 							${full-artifact-name}</web>
 					</processTypes>
 				</configuration>
