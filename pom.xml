@@ -180,7 +180,7 @@
 				<configuration>
 					<appName>ci-cd-spring-boot-java-app</appName>
 					<processTypes>
-						<web>java -jar -Dserver.port=$PORT ${full-artifact-name}</web>
+						<web>java $JAVA_OPTS -jar -Dserver.port=$PORT ${full-artifact-name}</web>
 					</processTypes>
 				</configuration>
 			</plugin>
